@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system;
+    line-height: 1.5;
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+/* === Variables === */
+:root {
+    --bg: #f8fafc;
+    --panel: #fff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --primary-700: #1e40af;
+    --accent: #16a34a;
+    --danger: #dc2626;
+    --radius: 14px;
+    --shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+    --container: 1100px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+}
+
+main{
+  margin-top: 5rem;
+}
+
+.site-header__logo{
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--text);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.site-header__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-weight: 800;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between; /* Separa el logo a la izquierda y los enlaces a la derecha */
+  align-items: center;            /* Centra verticalmente logo y enlaces */
+  padding: 1rem 2rem;
+  background-color: var(--bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navBar__enlaces{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;            /* Elimina el margen por defecto del ul */
+    padding: 0;           /* Elimina el padding por defecto del ul */
+}
+
+.navBar__enlaces li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navBar__enlaces li:hover {
+  color: var(--primary);
+}
+
+.navBar__hamburguesa {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  cursor: pointer;
+}
+
+/* Dibujamos las 3 líneas de la hamburguesa */
+.navBar__hamburguesa__rayas{
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+/* Si el width máximo es de 768 o menos, entoces activamos el icono de hamburguesa */
+   @media (max-width: 768px) {
+  
+  /* Ocultamos la lista de enlaces */
+  .navBar__enlaces {
+    display: none;
+  }
+
+  /* Mostramos la hamburguesa */
+  .navBar__hamburguesa {
+    display: flex;
+  }
+}
+
+/* Contenedor Flex para alinear los botones en fila */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap; /* Para que bajen si no entran en pantallas chicas */
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+
+/* Estilo base de los botones */
+.btn-group__btn {
+  padding: var(--space-4);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent; /* Reserva espacio para evitar saltos al poner borde */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Espacio interno si llevan icono */
+}
+
+/* Modificadores según el botón */
+/* Primario */
+.btn-group__btn--primario {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+.btn-group__btn--primario:hover {
+  background-color: var(--primary-600);
+}
+.btn-group__btn--primario:active {
+  background-color: var(--primary-700);
+}
+
+/* Secundario */
+.btn-group__btn--secundario {
+  background-color: var(--muted);
+  color: var(--text);
+}
+.btn-group__btn--secundario:hover {
+  background-color: #374151;
+}
+
+/* Outline */
+.btn-group__btn--outline {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-group__btn--outline:hover {
+  background-color: var(--primary-600);
+  color: #ffffff;
+}
+.btn-group__btn--outline:active {
+  background-color: var(--primary-700);
+  color: #ffffff;
+}
+
+/* Peligro */
+.btn-group__btn--peligro {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+.btn-group__btn--peligro:hover {
+  background-color: #b91c1c;
+}
+
+/* Con Icono */
+.btn-group__btn--icono {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+.btn-group__btn--icono:hover {
+  background-color: var(--primary-600);
+}
+
+/* Deshabilitado */
+.btn-group__btn--deshabilitado,
+.btn-group__btn:disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: transparent;
+}
+
+/* Contenedor Grid Principal */
+.contenedor-grid {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  
+  /* En Desktop: 2 columnas (la de la izquierda toma el espacio restante, la derecha un ancho fijo) */
+  grid-template-columns: 1fr 300px; 
+}
+
+/* RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+  .contenedor-grid {
+    grid-template-columns: 1fr; /* Pasa a 1 columna: la tarjeta de la zapatilla baja sola */
+    padding: var(--space-4);
+  }
+}
+
+.tarjetas{
+    background-color: var(--panel);
+    border-radius: 16px;
+    padding: var(--space-6);
+}
+
+/* Componente principal de la tarjeta */
+.product-card {
+  background-color: var(--bg);
+  border-radius: 16px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor de la imagen y badge superpuesto */
+.product-card__media {
+  position: relative; 
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: var(--space-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card__image {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Badge superpuesto en la esquina superior izquierda */
+.product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #f59e0b; /* Color naranja/amarillo */
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: var(--space-1);
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* Precios */
+.product-card__prices {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.product-card__price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+
+}
+
+.product-card__old-price {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: line-through; /* Tachamos el precio viejo */
+}
+
+/* Botones de acción */
+.product-card__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Ancho unificado para ambas secciones */
+.contenedor-grid,
+.contenedor-inferior {
+  width: 100%;
+  max-width: var(--container);  /* Techo para pantallas grandes */
+  margin: 0 auto;     /* Centra el bloque en el monitor */
+  padding: 0 var(--space-4);    /* Evita que toque los bordes en celulares */
+}
+
+/* Espaciado entre tarjetas de la sección inferior */
+.contenedor-inferior {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-6); 
+}
+
+/* Estilo de las tarjetas de abajo */
+.panel {
+  background-color: #ffffff;
+  border-radius: var(--space-4); /* Uso de rem */
+  padding: var(--space-6);     /* Uso de rem */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}

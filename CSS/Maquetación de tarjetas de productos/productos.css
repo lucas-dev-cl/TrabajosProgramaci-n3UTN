@@ -1,0 +1,75 @@
+.contenedorTarjetas {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Mantiene ambas tarjetas con la misma altura */
+    gap: 2rem; 
+    padding: 2rem;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    padding: 1.25rem;
+    background-color: #2b3a4a; 
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px); /* para que se levante, como si se seleccionara */
+}
+
+.tarjeta button {
+    margin-top: auto; /* EMPUJA EL BOTÓN AL FINAL, dejando alineados los botones de todas las tarjetas */
+    padding: 0.8em 1.2em;
+    background-color: #3182ce;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+    transition: all 0.2s ease;
+}
+
+.tarjeta button:hover {
+    background-color: #2b6cb0;
+    box-shadow: 0 6px 15px rgba(49, 130, 206, 0.5);
+}
+
+.tarjeta button:active {
+    transform: scale(0.98);
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.2rem 0;
+    text-align: center;
+}
+
+.tarjeta h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    /* Rompe palabras extremadamente largas si no hay espacios */
+    overflow-wrap: break-word; 
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    color: #a0aec0;     
+    margin: 0;
+}
+
+.imagenSimulada {
+    background-color: #3e3737;
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    flex-shrink: 0; /* Evita que la imagen cambie de tamaño si el texto crece */
+}

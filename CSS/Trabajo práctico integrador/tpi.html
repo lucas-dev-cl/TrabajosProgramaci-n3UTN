@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tpi.css">
+</head>
+<body>
+    <header>
+        <nav class="navBar">
+            <div class="icono">
+                <a href="#top" class="site-header__logo" aria-label="Inicio">
+                    <span class="site-header__mark" aria-hidden="true">M</span>
+                    <span>MiTienda</span>
+                </a>
+            </div>
+
+            <ul class="navBar__enlaces">
+                <li>Novedades</li>
+                <li>Ofertas</li>
+                <li>Contacto</li>
+            </ul>
+
+            <!-- Icono de hamburguesa -->
+            <div class="navBar__hamburguesa" aria-label="Menú">
+                <span class="navBar__hamburguesa__rayas"></span>
+                <span class="navBar__hamburguesa__rayas"></span>
+                <span class="navBar__hamburguesa__rayas"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Un main puede tener varias secciones y una seccion varios arituculos  -->
+    <main>
+        <section class="contenedor-grid">
+            <article class="tarjetas">
+                <h1>1) Sección de botónes</h1>
+                
+                <div class="btn-group">
+                    <button class="btn-group__btn btn-group__btn--primario">Primario</button>
+                    <button class="btn-group__btn btn-group__btn--secundario">Secundario</button>
+                    <button class="btn-group__btn btn-group__btn--outline">Outline</button>
+                    <button class="btn-group__btn btn-group__btn--peligro">Peligro</button>
+                    
+                    <!-- Botón con icono -->
+                    <button class="btn-group__btn btn-group__btn--icono">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    class="icono-lupa"
+                    >
+                    <!-- Círculo de la lente -->
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <!-- Mango de la lupa -->
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+
+                    <span>Con ícono</span>
+                    </button>
+                    
+                    <!-- Botón deshabilitado -->
+                    <button class="btn-group__btn btn-group__btn--deshabilitado" disabled>
+                        Deshabilitado
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">            
+                <!-- Imagen con badge superpuesto -->
+                <div class="product-card__media">
+                    <span class="product-card__badge">Nuevo</span>
+                    <img src="img/zapatillas.webp" alt="Zapatillas Runner Pro" class="product-card__image">
+                </div>
+
+                <!-- Info del producto -->
+                <div class="product-card__info">
+                    <h3 class="product-card__title">Zapatillas Runner Pro</h3>
+                    <p class="product-card__description">Amortiguación ligera, malla respirable y suela antideslizante.</p>
+                    
+                    <div class="product-card__prices">
+                    <span class="product-card__price">$ 24.999</span>
+                    <span class="product-card__old-price">$ 29.999</span>
+                    </div>
+                </div>
+
+                <div class="product-card__actions">
+                    <button class="btn-group__btn btn-group__btn--primario">Comprar ahora</button>
+                    <button class="btn-group__btn btn-group__btn--outline">Añadir</button>
+                </div>
+
+            </article>
+        </section>
+
+        <section class="container">
+                <div class="panel" id="novedades">
+                    <h2>Novedades</h2>
+                    <p class="code-note">Sección de relleno 1</p>
+                </div>
+                <div class="panel" id="ofertas">
+                    <h2>Ofertas</h2>
+                    <p class="code-note">Sección de relleno 2</p>
+                </div>
+                <div class="panel" id="contacto">
+                    <h2>Contacto</h2>
+                    <p class="code-note">Sección de relleno 3</p>
+                </div>
+        </section>
+    </main>
+</body>
+</html>
