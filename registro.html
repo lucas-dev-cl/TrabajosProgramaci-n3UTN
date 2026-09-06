@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <header>
+    <h1>Registro de usuario</h1>
+    <p>Por favor, complete el siguiente formulario</p>
+</header>
+
+<main>
+    <form action="" method="POST">
+        <label for="nombre">Nombre de usuario:</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre de usuario..." required>
+
+        <label for="email">Correo electrónico:</label>
+        <input id="email" name="email" type="email" placeholder="Ingrese su correo electrónico..." required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input id="contrasena" name="contrasena" type="password" placeholder="***************" required>
+
+        <fieldset>
+            <legend>Género:</legend>
+            <input type="radio" id="genero-m" name="genero" value="Masculino">
+            <label for="genero-m">Masculino</label>
+
+            <input type="radio" id="genero-f" name="genero" value="Femenino">
+            <label for="genero-f">Femenino</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Intereses:</legend>
+
+            <input type="checkbox" id="musica" name="intereses" value="Música">
+            <label for="musica">Música</label>
+
+            <input type="checkbox" id="futbol" name="intereses" value="Fútbol">
+            <label for="futbol">Fútbol</label>
+
+            <input type="checkbox" id="lectura" name="intereses" value="Lectura">
+            <label for="lectura">Lectura</label>
+
+            <input type="checkbox" id="gimnasio" name="intereses" value="Gimnasio">
+            <label for="gimnasio">Gimnasio</label>
+
+            <input type="checkbox" id="peliculas" name="intereses" value="Películas">
+            <label for="peliculas">Películas</label>
+        </fieldset>
+
+        <label for="pais">País:</label>
+        <select name="pais" id="pais" required>
+            <option value="" disabled selected>Seleccione un país...</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Alemania">Alemania</option>
+            <option value="Suecia">Suecia</option>
+            <option value="Colombia">Colombia</option>
+        </select>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" placeholder="Ingrese un comentario..."></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+</body>
+</html>
